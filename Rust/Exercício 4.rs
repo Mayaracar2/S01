@@ -1,27 +1,24 @@
-fn calcular_media(nota1: f64, nota2: f64, nota3: f64) -> f64 
-  {
-    let peso1 = 2.0;
-    let peso2 = 3.0;
-    let peso3 = 5.0;
+fn media_ponderada(avaliacao1: f64, avaliacao2: f64, avaliacao3: f64) -> f64 {
+    let peso_a = 2.0;
+    let peso_b = 3.0;
+    let peso_c = 5.0;
 
-    (nota1 * peso1 + nota2 * peso2 + nota3 * peso3) / (peso1 + peso2 + peso3)
-  }
+    (avaliacao1 * peso_a + avaliacao2 * peso_b + avaliacao3 * peso_c) / (peso_a + peso_b + peso_c)
+}
 
-fn main() 
-  {
-    let nota1 = 7.5;
-    let nota2 = 8.0;
-    let nota3 = 9.2;
+fn main() {
+    let prova1 = 7.5;
+    let prova2 = 8.0;
+    let prova3 = 9.2;
 
-    let media = calcular_media(nota1, nota2, nota3);
+    let resultado = media_ponderada(prova1, prova2, prova3);
 
-    println!("Notas: {}, {}, {}", nota1, nota2, nota3);
-    println!("Média ponderada: {:.2}", media);
+    println!("Notas: {}, {}, {}", prova1, prova2, prova3);
+    println!("Média ponderada: {:.2}", resultado);
 
-    if media >= 7.0 
-    {
-        println!("Resultado: Aprovado ");
+    if resultado >= 7.0 {
+        println!("Resultado: Aprovado");
     } else {
-        println!("Resultado: Reprovado ");
+        println!("Resultado: Reprovado");
     }
 }
