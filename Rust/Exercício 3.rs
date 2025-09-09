@@ -1,37 +1,34 @@
 use std::io;
 
-fn imprimir_tabuada(numero: i32, limite_inferior: i32, limite_superior: i32)
-  {
-    println!("\n=== Tabuada do {} ===", numero);
-    for i in limite_inferior..=limite_superior 
-      {
-        println!("{} x {} = {}", numero, i, numero * i);
-      }
-  }
+fn mostrar_tabuada(base: i32, inicio: i32, fim: i32) {
+    println!("\n=== Tabuada do {} ===", base);
+    for fator in inicio..=fim {
+        println!("{} x {} = {}", base, fator, base * fator);
+    }
+}
 
-fn main() 
-  {
-    let mut entrada = String::new();
+fn main() {
+    let mut buffer = String::new();
 
     println!("Digite o número da tabuada:");
     io::stdin()
-        .read_line(&mut entrada)
+        .read_line(&mut buffer)
         .expect("Erro ao ler o número!");
-    let numero: i32 = entrada.trim().parse().expect("Digite um número válido!");
-    entrada.clear();
+    let base: i32 = buffer.trim().parse().expect("Digite um número válido!");
+    buffer.clear();
 
-    println!("Digite o limite inferior:");
+    println!("Digite o limite inicial:");
     io::stdin()
-        .read_line(&mut entrada)
+        .read_line(&mut buffer)
         .expect("Erro ao ler o número!");
-    let limite_inferior: i32 = entrada.trim().parse().expect("Digite um número válido!");
-    entrada.clear();
+    let inicio: i32 = buffer.trim().parse().expect("Digite um número válido!");
+    buffer.clear();
 
-    println!("Digite o limite superior:");
+    println!("Digite o limite final:");
     io::stdin()
-        .read_line(&mut entrada)
+        .read_line(&mut buffer)
         .expect("Erro ao ler o número!");
-    let limite_superior: i32 = entrada.trim().parse().expect("Digite um número válido!");
+    let fim: i32 = buffer.trim().parse().expect("Digite um número válido!");
 
-    imprimir_tabuada(numero, limite_inferior, limite_superior);
+    mostrar_tabuada(base, inicio, fim);
 }
