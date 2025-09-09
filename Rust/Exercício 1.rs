@@ -1,38 +1,38 @@
 use std::io;
 
-fn verificar_senha(senha: &str) -> bool {
+fn checar_senha(texto: &str) -> bool {
     // Verifica comprimento
-    if senha.len() < 8 {
+    if texto.len() < 8 {
         return false;
     }
 
-    let mut tem_numero = false;
-    let mut tem_maiuscula = false;
+    let mut contem_digito = false;
+    let mut contem_maiuscula = false;
 
-    for c in senha.chars() {
-        if c.is_ascii_digit() {
-            tem_numero = true;
+    for caractere in texto.chars() {
+        if caractere.is_ascii_digit() {
+            contem_digito = true;
         }
-        if c.is_ascii_uppercase() {
-            tem_maiuscula = true;
+        if caractere.is_ascii_uppercase() {
+            contem_maiuscula = true;
         }
     }
 
-    senha.len() >= 8 && tem_numero && tem_maiuscula
+    texto.len() >= 8 && contem_digito && contem_maiuscula
 }
 
 fn main() {
     loop {
         println!("Digite sua senha:");
 
-        let mut senha = String::new();
+        let mut entrada = String::new();
         io::stdin()
-            .read_line(&mut senha)
+            .read_line(&mut entrada)
             .expect("Falha ao ler entrada");
 
-        let senha = senha.trim(); // remove \n do final
+        let senha_limpa = entrada.trim(); // remove \n do final
 
-        if verificar_senha(senha) {
+        if checar_senha(senha_limpa) {
             println!("Senha válida! Acesso concedido.");
             break;
         } else {
