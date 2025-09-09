@@ -1,24 +1,24 @@
-local numeros = {}
-local valor
-local tabela = {}
+local listaNumeros = {}
+local entrada
+local pares = {}
 
 print("Digite números (digite 0 para parar): ")
 
 while true do
-    valor = tonumber(io.read())
-    if valor == 0 then
+    entrada = tonumber(io.read())
+    if entrada == 0 then
         break
     end
-    table.insert(numeros, valor)
+    table.insert(listaNumeros, entrada)
 end
 
-for i = 1, #numeros do --# pega o tamanho da tabela
-    if numeros[i] % 2 == 0 then
-        table.insert(tabela, numeros[i])
+for indice = 1, #listaNumeros do -- # pega o tamanho da lista
+    if listaNumeros[indice] % 2 == 0 then
+        table.insert(pares, listaNumeros[indice])
     end
 end
 
-print("Sua tabela somente com números pares:")
-for i, v in ipairs(tabela) do
-    print(v)
+print("Lista apenas com números pares:")
+for _, valor in ipairs(pares) do
+    print(valor)
 end
