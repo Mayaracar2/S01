@@ -3,7 +3,7 @@
 30 LET media_final = (VAL(nota1) + VAL(nota2)) / 2
 
 40 IF media_final > 60 THEN GOTO 100
-50 IF media_final < 30 THEN GOTO 200
+50 IF media_final < 30 THEN GOTO 200 
     
 60 IF media_final <= 60 AND media_final > 30 THEN GOTO 65
 65 INPUT "Digite a sua nota de recuperação (NP3): "; nota_rec
