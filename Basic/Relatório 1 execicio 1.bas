@@ -1,23 +1,19 @@
-10 input "Digite a primeira nota: "; nota1
-20 input "Digite a segunda nota: "; nota2
+10 INPUT "Digite sua primeira nota: "; nota1
+20 INPUT "Digite sua segunda nota: "; nota2
+30 LET media_final = (VAL(nota1) + VAL(nota2)) / 2
 
-30 soma = nota1 + nota2
-40 media = soma / 2
+40 IF media_final > 60 THEN GOTO 100
+50 IF media_final < 30 THEN GOTO 200
+    
+60 IF media_final <= 60 AND media_final > 30 THEN GOTO 65
+65 INPUT "Digite a sua nota de recuperação (NP3): "; nota_rec
+68 LET media_com_rec = media_final + VAL(nota_rec)
+      
+70 IF media_com_rec > 50 THEN PRINT "Aprovado pela NP3" ELSE PRINT "Reprovado pela NP3"
+75 END
 
-50 if media > 60 then goto 200
-60 if media < 30 then goto 210
-70 if media <60 and media >30 then goto 100 
+100 PRINT "Aprovado Direto!"
+110 END
 
-100 input "Digite a nota da NP3: "; nota3
-110 novaMedia = (soma + nota3) / 2
-120 if novaMedia > 50 then goto 240
-130 goto 260
-
-200 print "Aprovado direto" 
-210 end
-220 print "Reprovado direto" 
-230 end    
-240 print "Aprovado pela NP3" 
-250 end
-260 print "Reprovado na NP3" 
-300 end
+200 PRINT "Reprovado Direto!"
+210 END
