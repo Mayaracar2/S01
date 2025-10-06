@@ -14,7 +14,7 @@ class Pessoa
 
     virtual void apresentar()
     {
-      cout << "Olá, meu nome é " << nome << " e sou uma pessoa." << endl;
+      cout << "Oii, meu nome é " << nome << " e sou uma pessoa." << endl;
     }
 
     virtual ~pessoa(){}
@@ -33,7 +33,7 @@ class Professor : public Pessoa
 
     void apresentar() override
     {
-      cout << "Olá, meu nome é " << nome << " e sou um professor de " << disciplina << "." << endl;
+      cout << "Oii, meu nome é " << nome << " e sou um professor de " << disciplina << "." << endl;
     }
 };
 
@@ -52,14 +52,14 @@ class Aluno : public pessoa
 
     void apresentar() override
     {
-      cout << "Olá, meu nome é " << nome << " e sou um aluno de " << curso << "." << endl;
+      cout << "Oii, meu nome é " << nome << " e sou um aluno de " << curso << "." << endl;
     }
 };
 
 int main()
 {
   pessoa* pessoa1 = new Professor("Marcelo", "Paradigmas da Programação");
-  pessoa* pessoa2 = new Aluno("Maria", "Engenharia de Software", 267);
+  pessoa* pessoa2 = new Aluno("Mayara", "Engenharia de Software", 257);
 
   pessoa1->apresentar();
   cout << endl;
