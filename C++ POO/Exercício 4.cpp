@@ -32,7 +32,7 @@ class Humano : public SerVivo
 
     void apresentar() override 
     {
-      cout << "Olá, meu nome é " << nome << " prazer em conhecer, sou um humano." << endl;
+      cout << "Oii, meu nome é " << nome << " prazer em conhecer, sou um humano." << endl;
     }
 };
 
@@ -46,7 +46,7 @@ class Elfo : public Servivo
 
     void apresentar() override
     {
-      cout << "Prazer em conhecer, me chamo " << nome << " sou um elfo." << endl;
+      cout << "Oii, me chamo " << nome << " sou um elfo." << endl;
     }
 };
 
@@ -60,7 +60,7 @@ class Fada : public Servivo
 
     void apresentar() override 
     {
-      cout << "Ei! Escute! Escute! Meu nome é " << nome << " sou uma fada." << endl;
+      cout << "Olá, meu nome é " << nome << " sou uma fada." << endl;
     }
 };
 
